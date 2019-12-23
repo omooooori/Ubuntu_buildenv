@@ -34,6 +34,9 @@ cd ${INSTALLATION_BASE}/python_installation/${PYTHON_VERSION};
 curl -O https://www.python.org/ftp/python/3.6.2/Python-${PYTHON_VERSION}.tar.xz
 xz -dc Python-3.6.2.tar.xz | tar xfv -;
 
+### PATH
+echo export PATH='$PATH:$HOME/anaconda3/bin:$PATH' >> ~/.bashrc
+
 ##Create Anaconda virtual env
 conda update --all
 
@@ -50,6 +53,11 @@ mkdir -p ${INSTALLATION_BASE}/go/${GO_VERSION};
 cd ${INSTALLATION_BASE}/go/${GO_VERSION};
 curl -O https://storage.googleapis.com/golang/go${GO_VERSION=}.linux-amd64.tar.gz;
 tar zxvf go${GO_VERSION}.linux-amd64.tar.gz;
+
+### PATH
+echo export GOPATH='$HOME/go' >> ~/.bashrc
+echo export PATH='$GOPATH/bin:$PATH' >> ~/.bashrc
+echo export PATH='$PATH:/usr/local/go/bin:$PATH' >> ~/.bashrc
 
 # Qt [https://qiita.com/chlochan/items/53f1276522d03f460a81]
 mkdir -p ${INSTALLATION_BASE}/Qt/${QT_MINOR_VERSION};

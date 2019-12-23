@@ -12,6 +12,15 @@ sudo apt upgrade
 
 mkdir -p ${INSTALLATION_BASE};
 
+# Git
+sudo apt install git
+
+### User config
+git config --global user.email "r.shimizu18020@gmail.com"
+git config --global user.name "ora1027"
+
+### Create SSH key (To avoid having to confirm your password every time)
+
 # Python
 ### Anaconda
 mkdir -p ${INSTALLATION_BASE}/anaconda_installation/${ANACONDA_VERSION}
